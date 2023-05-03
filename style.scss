@@ -1,0 +1,302 @@
+*{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --zuta: #fefe47;
+    --plava: #223;
+    --tekst: silver;
+    --boja_bordera: rgb(16, 17, 19);
+    --hover:rgb(60, 60, 67);
+    --chat:rgb(48, 48, 75);
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    height: 100vh;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .navigacija {
+        height: 100%;
+        width: 100%;
+        border-right: 1px solid var(--boja_bordera);
+
+        .nav_logo {
+            font-size: 1.4rem;
+            letter-spacing: -1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10%;
+            width: 100%;
+            background-color: var(--plava);
+            color: var(--zuta);
+            border-bottom: 1px solid var(--boja_bordera);
+            
+            .span_web{
+                font-size: 17px;
+                letter-spacing: 1.5px;
+                margin-left: 10px;
+            }
+        }
+
+        .search {
+            background-color: lightgreen;
+            height: 7%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .ikona_povećala {
+                height: 100%;
+                width: 20%;
+                background-color: var(--plava);
+                color: silver;
+
+                i{ 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 25px;
+                    cursor: pointer;
+                }
+
+            }
+            
+            .search_bar_područje {
+                height: 100%;
+                width: 80%;
+
+                #search_bar {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    font-size: 1rem;
+                    padding-left: 10px;
+                    background-color:var(--plava);
+                    color: silver;
+                    outline: none;
+                }
+            }
+          
+        }
+
+        .osobe {
+            background-color: var(--plava);
+            height: 83%;
+            width: 100%;
+
+            .prva,
+            .druga,
+            .treca,
+            .cetvrta,
+            .peta,
+            .sesta,
+            .sedma,
+            .osma,
+            .deveta {
+                border-bottom: 1px solid var(--boja_bordera); 
+                }
+            
+            .prva {
+                border-top: 1px solid var(--boja_bordera);
+            }
+
+            :nth-child(n){
+                height: 10%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                .profilna { 
+                    height: 100%;
+                    width: 20%;
+                    display: flex;
+                    justify-content: center;
+                    
+                    .slicica {
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                        background-image: url(./img/IMG-20190927-WA0014-01-01.jpeg);
+                        background-position: center;
+                        background-size: cover;
+                    }
+                }
+
+                .nove_poruke {
+                    height: 35%;
+                    width: 5%;
+                    color: var(--tekst);
+                    border-radius: 50%;
+
+                    p{
+                        background-color: none;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        -webkit-text-stroke: .1px black;
+                        animation: none; /* u js dodati anim: nova_por_anim */
+                        font-size: .9rem;
+
+                        @keyframes nova_por_anim {
+                            from {
+                                background-color: none;
+                            }
+                            to {
+                                background-color: rgb(47, 130, 47);
+                            }
+                        }
+                    }
+                }
+
+                .ime {
+                    height: 100%;
+                    width: 60%;
+                    color: var(--tekst);
+                    font-size: .95rem;
+                    /* padding left ili text-align:left + dodati justify-content: center na gore nth child*/
+                }
+
+                .vrijeme {
+                    height: 100%;
+                    width: 15%;
+                    color: var(--tekst);
+                    font-size: 0.8rem;
+                }
+            }
+
+            :hover{
+                background-color: var(--hover);
+            }
+
+        }
+    }
+}
+
+main {
+    background-color: var(--plava);
+    height: 100vh;
+    width: 75%;
+
+        .aktivna_osoba {
+            height: 10%;
+            width: 100%;
+            border-bottom: 1px solid var(--boja_bordera);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 20px;
+
+
+            .trenutna_osoba {
+                height: 100%;
+                width: 30%;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+
+                .profilna { 
+                    height: 100%;
+                    width: 20%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    .slicica {
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                        background-image: url(./img/IMG-20190927-WA0014-01-01.jpeg);
+                        background-position: center;
+                        background-size: cover;
+                    }
+                }
+
+                .ime_trenutne_osobe {
+
+                    h3{
+                        color: var(--tekst);
+                    }
+                }
+            }
+
+        }
+
+        .aktivni_chat {
+            width: 100%;
+            height: 80%;
+            border-bottom: 1px solid var(--boja_bordera);
+            background-color: var(--chat);
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            align-items: flex-end;
+
+            .novi_element {
+                padding: 0 15px 0 15px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-right: 50px;
+                margin-bottom: 30px;
+                max-width: 80%;
+                word-wrap: break-word; 
+                height: 35px;
+                background-color: var(--zuta);
+                border-radius: 8px;
+            }
+
+        }
+
+
+        .aktivna_tipkovnica {
+            width: 70%;
+            height: 10%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            #tipkovnica {
+                width: 500px;
+                height: 40px;
+                color: var(--tekst);
+                font-size: 1rem;
+                background-color: var(--chat);
+                border: none;
+                outline: none;
+                padding-left: 15px;
+                border-radius: 8px;
+            }
+
+            #send_button{
+                background-color: var(--zuta);
+                color:var(--plava);
+                width: 75px;
+                height: 27px;
+                font-size: .8rem;
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                font-weight: bold;
+                
+            }
+        }
+}
